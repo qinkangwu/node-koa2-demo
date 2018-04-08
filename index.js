@@ -22,10 +22,12 @@ const client = new Eureka({
       },
     },
     eureka: {
-      // eureka server host / port
-      host: '172.16.1.97',
-      port: 8761,
-      servicePath : '/eureka'
+        serviceUrls : {
+            default : [
+                'http://172.16.1.96:8761/eureka',
+                'http://172.16.1.97:8761/eureka'
+            ]
+        }
     },
 });
 
