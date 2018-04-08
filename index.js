@@ -24,8 +24,8 @@ const client = new Eureka({
     eureka: {
         serviceUrls : {
             default : [
-                'http://172.16.1.96:8761/eureka',
-                'http://172.16.1.97:8761/eureka'
+                'http://172.16.1.96:8761/eureka/apps/',
+                'http://172.16.1.97:8761/eureka/apps/'
             ]
         }
     },
