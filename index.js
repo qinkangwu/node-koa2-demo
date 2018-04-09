@@ -5,6 +5,8 @@ const logMiddleware = require('./middlewares/logMiddleware.js');
 const checkSession = require('./middlewares/checkSessionMiddleware');
 const bodyParser = require('koa-bodyparser');
 const Eureka = require('eureka-js-client').Eureka;
+const numCPUs = require('os').cpus().length;
+console.log(numCPUs);
 const client = new Eureka({
     // application instance information
     instance: {
