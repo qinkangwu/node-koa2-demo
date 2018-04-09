@@ -16,12 +16,12 @@ const client = new Eureka({
         '@enabled': true,
       },
       vipAddress: 'test.something.com',
-      statusPageUrl : 'http://localhost:3000/api-front/info',
+      statusPageUrl : 'http://localhost:3000/info',
       dataCenterInfo: {
         '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
         name: 'MyOwn',
       },
-      healthCheckUrl : 'http://localhost:3000/api-front/info',
+      healthCheckUrl : 'http://localhost:3000/info',
     },
     eureka: {
         heartbeatInterval : 20000,
@@ -34,7 +34,7 @@ const client = new Eureka({
     },
 });
 
-启动erueka注册
+//启动erueka注册
 client.start((err)=>{
     console.log(err || 'node app erueka register completed ~');
 })
