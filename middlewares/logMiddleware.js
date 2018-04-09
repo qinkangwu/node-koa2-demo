@@ -1,5 +1,6 @@
+const logUtil = require('../lib/log4jsUtil');
 function log(ctx){
-    console.log(ctx.method,ctx.header.host + ctx.url);
+    logUtil.debug(ctx.method,ctx.header.host + ctx.url);
 }
 
 module.exports = ()=>{

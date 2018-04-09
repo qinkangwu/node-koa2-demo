@@ -1,7 +1,8 @@
 const Koa = require('koa');
 const app = new Koa();
 const router = require('./router');
-const logMiddleware = require('./lib/logMiddleware.js');
+const logMiddleware = require('./middlewares/logMiddleware.js');
+const checkSession = require('./middlewares/checkSessionMiddleware');
 const bodyParser = require('koa-bodyparser');
 const Eureka = require('eureka-js-client').Eureka;
 const client = new Eureka({
@@ -33,11 +34,13 @@ const client = new Eureka({
     },
 });
 
-client.start((err)=>{
-    console.log(err || 'node app erueka register completed ~');
-})
+//启动erueka注册
+// client.start((err)=>{
+//     console.log(err || 'node app erueka register completed ~');
+// })
 
 app.use(logMiddleware());
+//app.use(checkSession());
 app.use(bodyParser())
 app.use(router.routes());
 

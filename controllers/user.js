@@ -1,6 +1,6 @@
 const http = require('../lib/http');
 const apiPath = require('../apiPath/index');
-const User = require('../models').User;
+const User = require('../models/user');
 
 exports.getUser = async ctx =>{
     //let userInfo = await http.get(apiPath.getUserInfo);
