@@ -8,7 +8,7 @@ const Eureka = require('eureka-js-client').Eureka;
 const client = new Eureka({
     // application instance information
     instance: {
-      app: 'qkw_test',
+      app: 'node-api-server',
       hostName: 'localhost',
       ipAddr: '127.0.0.1',
       port: {
