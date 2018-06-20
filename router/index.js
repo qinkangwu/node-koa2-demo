@@ -7,4 +7,4 @@ api.use(user.routes());
 api.use(info.routes());
 api.use(user_feedback.routes());
 
-module.exports = api.use('/api-node',api.routes(),api.allowedMethods());
+module.exports = api.use('/api-node/',api.routes(),api.allowedMethods());

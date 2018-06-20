@@ -5,9 +5,7 @@ const UserFeedback = sequelizeBase.define('user_feedback',{
     id: {
         type: Sequelize.STRING,
         primaryKey: true,
-        validate : {
-            notNull : true
-        }
+        allowNull : false
     },
     connection : {
         type : Sequelize.STRING,

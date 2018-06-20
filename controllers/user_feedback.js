@@ -20,6 +20,7 @@ exports.saveUserFeedback = async ctx=>{
         let res = await project.save();
         ctx.body = await result.ok({id:res.dataValues.id})
     }catch(e){
+        console.log(e);
         ctx.body = await result.fail('保存数据失败');
     }
 }
