@@ -16,7 +16,7 @@ const client = new Eureka({
         '@enabled': true,
       },
       vipAddress: 'test.something.com',
-      statusPageUrl : 'http://localhost:3000/info',
+      statusPageUrl : 'http://localhost:3000/api-node/info',
       dataCenterInfo: {
         '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
         name: 'MyOwn',
