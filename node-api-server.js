@@ -6,16 +6,15 @@ const checkSession = require('./middlewares/checkSessionMiddleware');
 const bodyParser = require('koa-bodyparser');
 const Eureka = require('eureka-js-client').Eureka;
 const os = require('os');  
+const logUtil = require('./lib/log4jsUtil');
 
 let IPv4,hostName;  
-hostName=os.hostname();  
-for(let i=0;i<os.networkInterfaces().eth0.length;i++){  
-    if(os.networkInterfaces().eth0[i].family=='IPv4'){  
-        IPv4=os.networkInterfaces().eth0[i].address;  
-    }  
-}
-console.log(IPv4,hostName);
-
+// hostName=os.hostname();  
+// for(let i=0;i<os.networkInterfaces().eth0.length;i++){  
+//     if(os.networkInterfaces().eth0[i].family=='IPv4'){  
+//         IPv4=os.networkInterfaces().eth0[i].address;  
+//     }  
+// }
 const client = new Eureka({
     // application instance information
     instance: {
@@ -46,9 +45,9 @@ const client = new Eureka({
 });
 
 //启动erueka注册
-client.start((err)=>{
-    console.log(err || 'node app erueka register completed ~');
-})
+// client.start((err)=>{
+//     console.log(err || 'node app erueka register completed ~');
+// })
 
 app.use(logMiddleware());
 //app.use(checkSession());
