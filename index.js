@@ -20,7 +20,7 @@ const client = new Eureka({
     // application instance information
     instance: {
       app: 'node-api-server',
-      hostName: hostName,
+      hostName: `${IPv4}:${hostName}:3000`,
       ipAddr: IPv4,
       port: {
         '$': 3000,
