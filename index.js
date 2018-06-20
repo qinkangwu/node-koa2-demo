@@ -35,9 +35,9 @@ const client = new Eureka({
 });
 
 //启动erueka注册
-client.start((err)=>{
-    console.log(err || 'node app erueka register completed ~');
-})
+// client.start((err)=>{
+//     console.log(err || 'node app erueka register completed ~');
+// })
 
 app.use(logMiddleware());
 //app.use(checkSession());
