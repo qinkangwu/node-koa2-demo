@@ -1,6 +1,6 @@
 const UserFeedBack = require('../controllers/user_feedback');
-const router = require('koa-router')({prefix:'feedback'});
+const router = require('koa-router')({prefix:'user'});
 
-router.post('/user/add',UserFeedBack.saveUserFeedback);
+router.post('/feedback/add',UserFeedBack.saveUserFeedback);
 
 module.exports = router;
