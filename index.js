@@ -5,12 +5,23 @@ const logMiddleware = require('./middlewares/logMiddleware.js');
 const checkSession = require('./middlewares/checkSessionMiddleware');
 const bodyParser = require('koa-bodyparser');
 const Eureka = require('eureka-js-client').Eureka;
+const os = require('os');  
+
+let IPv4,hostName;  
+hostName=os.hostname();  
+for(let i=0;i<os.networkInterfaces().en0.length;i++){  
+    if(os.networkInterfaces().en0[i].family=='IPv4'){  
+        IPv4=os.networkInterfaces().en0[i].address;  
+    }  
+}
+console.log(IPv4,hostName);
+
 const client = new Eureka({
     // application instance information
     instance: {
       app: 'node-api-server',
-      hostName: 'localhost',
-      ipAddr: '127.0.0.1',
+      hostName: hostName,
+      ipAddr: IPv4,
       port: {
         '$': 3000,
         '@enabled': true,
