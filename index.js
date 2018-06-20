@@ -32,7 +32,7 @@ const client = new Eureka({
         '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
         name: 'MyOwn',
       },
-      healthCheckUrl : 'http://localhost:3000/info',
+      healthCheckUrl : 'http://localhost:3000/api-node/info',
     },
     eureka: {
         heartbeatInterval : 20000,
