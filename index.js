@@ -9,7 +9,12 @@ const os = require('os');
 
 let IPv4,hostName;  
 hostName=os.hostname();  
-console.log(os.networkInterfaces());
+for(let i=0;i<os.networkInterfaces().en0.length;i++){  
+    if(os.networkInterfaces().en0[i].family=='IPv4'){  
+        IPv4=os.networkInterfaces().en0[i].address;  
+    }  
+}
+console.log(IPv4,hostName);
 
 const client = new Eureka({
     // application instance information
@@ -41,9 +46,9 @@ const client = new Eureka({
 });
 
 //启动erueka注册
-// client.start((err)=>{
-//     console.log(err || 'node app erueka register completed ~');
-// })
+client.start((err)=>{
+    console.log(err || 'node app erueka register completed ~');
+})
 
 app.use(logMiddleware());
 //app.use(checkSession());
