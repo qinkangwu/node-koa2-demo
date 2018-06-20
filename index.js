@@ -9,7 +9,7 @@ const os = require('os');
 
 let IPv4,hostName;  
 hostName=os.hostname();  
-for(let i=0;i<os.networkInterfaces().en0.length;i++){  
+for(let i=0;i<os.networkInterfaces().eth0.length;i++){  
     if(os.networkInterfaces().en0[i].family=='IPv4'){  
         IPv4=os.networkInterfaces().en0[i].address;  
     }  
