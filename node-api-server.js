@@ -6,7 +6,6 @@ const checkSession = require('./middlewares/checkSessionMiddleware');
 const bodyParser = require('koa-bodyparser');
 const Eureka = require('eureka-js-client').Eureka;
 const os = require('os');  
-const logUtil = require('./lib/log4jsUtil');
 
 let IPv4,hostName;  
 // hostName=os.hostname();  
